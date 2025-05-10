@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
 import { vehicleIcon, Initial_Positon } from "../data/constants";
 import { routeCoordinates } from "../data/dummy";
 import gsap from "gsap";
+import 'leaflet-rotatedmarker';
 
 function MapComponent() {
   const markerRef = useRef(null);
@@ -58,7 +59,7 @@ function MapComponent() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Marker position={Initial_Positon} icon={vehicleIcon} ref={markerRef} />
+        <Marker position={Initial_Positon} icon={vehicleIcon}  rotationAngle={-90} rotationOrigin="center" ref={markerRef} />
 
         <Polyline positions={routeCoordinates} color="blue" />
         
